@@ -1,0 +1,39 @@
+# Ignore environment variable files
+.env
+.env.*
+ 
+# Ignore virtual environment directories
+venv/
+.env/
+__pycache__/
+ 
+# Ignore database files
+instance/database.db
+ 
+# Ignore Python bytecode files
+*.pyc
+*.pyo
+*.pyd
+__pycache__/
+
+# Ignore IDE/editor-specific files
+.vscode/
+.idea/
+*.sublime-workspace
+
+# Ignore log files
+*.log
+
+# Ignore build or distribution files
+dist/
+build/
+*.tar.gz
+*.egg
+
+# Ignore OS-specific files
+.DS_Store
+Thumbs.db
+
+# Ignore test result directories
+test_results/
+coverage/

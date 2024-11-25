@@ -1,0 +1,7 @@
+.content-container {
+  display: flex;
+}
+
+.content-container > nav {
+  width: 25%;
+}

@@ -1,0 +1,54 @@
+{%extends "base.html"%} {% block title %}Login{% endblock %}{%block content%}
+<div class="form-container">
+  <form method="POST">
+    <h3 class="text-center">Welcome to <span>GreatVidya</span></h3>
+    <div class="mb-3">
+      <label for="InputUsername" class="form-label">Email</label>
+      <input
+        type="email"
+        class="form-control"
+        id="email"
+        name="email"
+        placeholder="Please enter your email"
+      />
+    </div>
+    <div class="mb-3">
+      <label for="InputUsername" class="form-label">Username</label>
+      <input
+        type="text"
+        class="form-control"
+        id="username"
+        name="username"
+        placeholder="Please enter your username"
+      />
+    </div>
+    <div class="mb-3">
+      <label for="InputPassword" class="form-label">Password</label>
+      <input
+        type="password"
+        class="form-control"
+        id="password1"
+        name="password1"
+        placeholder="Please enter your password"
+      />
+    </div>
+    <div class="mb-3">
+      <label for="ConfirmPassword" class="form-label">Confirm Password</label>
+      <input
+        type="password"
+        class="form-control"
+        id="password2"
+        name="password2"
+        placeholder="Please enter your password again"
+      />
+    </div>
+    <div class="d-grid mx-auto">
+      <button type="submit" class="btn">Create Account</button>
+    </div>
+    <p class="go-sign-up">
+      Already have an account? <a href="/login">Login</a>
+    </p>
+  </form>
+</div>
+
+{%endblock%}
