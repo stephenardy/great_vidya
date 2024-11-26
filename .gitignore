@@ -1,15 +1,20 @@
 # Ignore environment variable files
 .env
-.env.*
+env/
+ENV/
+env.bak/
+.env/
  
 # Ignore virtual environment directories
+.venv
 venv/
-.env/
+venv.bak/
 __pycache__/
  
-# Ignore database files
+# Ignore database files and cache
 instance/database.db
- 
+.webassets-cache
+
 # Ignore Python bytecode files
 *.pyc
 *.pyo
