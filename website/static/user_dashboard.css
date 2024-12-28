@@ -1,5 +1,40 @@
+#top-navbar {
+  display: flex;
+  justify-content: space-between;
+  margin-right: 10px;
+  margin-left: 10px;
+}
+
+#top-navbar > .side-tab-breadcrumb {
+  display: flex;
+  gap: 25px;
+  align-items: center;
+}
+
+#top-navbar > .nav-icon {
+  display: flex;
+  gap: 25px;
+  align-items: center;
+}
+
+/* a #dropdown-item:link,
+a #dropdown-item:visited {
+  background-color: grey;
+  color: black;
+  padding: 14px 25px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+} */
+
+/* .nav-icon > .btn-group > .dropdown-menu > a:hover, a:active {
+  background-color: red;
+}
+*/
 .content-container {
   display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .content-container > nav {

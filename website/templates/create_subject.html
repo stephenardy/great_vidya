@@ -1,0 +1,33 @@
+{%extends "base_subject.html"%} {% block title %}Create Subject{% endblock %}
+{%block content%}
+
+<form method="POST">
+  <h3 class="text-center">Create Subject</h3>
+  <div class="mb-3">
+    <label for="InputSubject" class="form-label">Subject Name</label>
+    <input
+      type="text"
+      class="form-control"
+      id="name"
+      name="name"
+      placeholder="Subject Name"
+    />
+  </div>
+  <div class="mb-3">
+    <label for="class-name" class="form-label">Class Name</label>
+    <input
+      type="text"
+      class="form-control"
+      id="class_name"
+      name="class_name"
+      placeholder="Class Name"
+    />
+  </div>
+  <div class="d-grid mx-auto">
+    <button button type="submit" class="btn" style="background-color: green">
+      Create Subject
+    </button>
+  </div>
+</form>
+
+{%endblock%}

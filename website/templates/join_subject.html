@@ -1,0 +1,24 @@
+{%extends "base_subject.html"%} {% block title %}Join Subject{% endblock %}
+{%block content%}
+
+<form method="POST">
+  <h3 class="text-center">Enter the Subject Code</h3>
+  <div class="mb-3">
+    <label for="InputSubjectCode" class="form-label">Subject Code</label>
+    <input
+      type="text"
+      class="form-control"
+      id="code"
+      name="code"
+      placeholder="Enter Subject Code"
+    />
+  </div>
+
+  <div class="d-grid mx-auto">
+    <button button type="submit" class="btn" style="background-color: green">
+      Join Subject
+    </button>
+  </div>
+</form>
+
+{%endblock%}

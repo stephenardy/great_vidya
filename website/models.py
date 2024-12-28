@@ -14,6 +14,7 @@ class Subjects(db.Model):
     id = db.Column(db.Integer, primary_key=True, autoincrement=True)
     name = db.Column(db.String(150), nullable=False)
     class_name = db.Column(db.String(150))
+    code = db.Column(db.String(7), unique=True)
     subject_users = db.relationship('UserSubjects', back_populates='subject')
 
 class UserSubjects(db.Model):
