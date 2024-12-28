@@ -10,45 +10,121 @@
       crossorigin="anonymous"
     />
     <link rel="stylesheet" href="../static/user_dashboard.css" />
+    <script
+      src="https://kit.fontawesome.com/4406d6af5e.js"
+      crossorigin="anonymous"
+    ></script>
     <title>{% block title %}GreatVidya{% endblock %}</title>
   </head>
   <body>
-    <nav class="navbar" style="background-color: white">
-      <div class="container-fluid">
-        <span class="navbar-brand mb-0 h1">GreatVidya</span>
-      </div>
-    </nav>
-    <div class="content-container">
-      <nav class="nav flex-column">
-        <a class="nav-link active" aria-current="page" href="#">Home</a>
-        <a class="nav-link" href="#">Calendar</a>
-        <hr />
-        <div class="accordion accordion-flush" id="accordionFlushExample">
-          <div class="accordion-item">
-            <h2 class="accordion-header">
-              <button
-                class="accordion-button collapsed"
-                type="button"
-                data-bs-toggle="collapse"
-                data-bs-target="#flush-collapseOne"
-                aria-expanded="false"
-                aria-controls="flush-collapseOne"
-              >
-                Enrolled class
-              </button>
-            </h2>
-            <div
-              id="flush-collapseOne"
-              class="accordion-collapse collapse"
-              data-bs-parent="#accordionFlushExample"
-            >
-              <div class="accordion-body">this is the list</div>
+    <nav class="navbar" id="top-navbar" style="background-color: white">
+      <div class="side-tab-breadcrumb">
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="offcanvas"
+          data-bs-target="#offcanvasDarkNavbar"
+          aria-controls="offcanvasDarkNavbar"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div
+          class="offcanvas offcanvas-start"
+          tabindex="-1"
+          id="offcanvasDarkNavbar"
+          aria-labelledby="offcanvasDarkNavbarLabel"
+        >
+          <div class="offcanvas-body">
+            <a class="nav-link active" aria-current="page" href="#">Home</a>
+            <a class="nav-link" href="#">Calendar</a>
+            <hr />
+            <div class="accordion accordion-flush" id="accordionFlushTeach">
+              <div class="accordion-item">
+                <h2 class="accordion-header">
+                  <button
+                    class="accordion-button collapsed"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#flush-collapseOne"
+                    aria-expanded="false"
+                    aria-controls="flush-collapseOne"
+                  >
+                    Teached class
+                  </button>
+                </h2>
+                <div
+                  id="flush-collapseOne"
+                  class="accordion-collapse collapse"
+                  data-bs-parent="#accordionFlushTeach"
+                >
+                  <div class="accordion-body">this is the list</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="accordion accordion-flush" id="accordionFlushEnroll">
+              <div class="accordion-item">
+                <h2 class="accordion-header">
+                  <button
+                    class="accordion-button collapsed"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#flush-collapseTwo"
+                    aria-expanded="false"
+                    aria-controls="flush-collapseTwo"
+                  >
+                    Enrolled class
+                  </button>
+                </h2>
+                <div
+                  id="flush-collapseTwo"
+                  class="accordion-collapse collapse"
+                  data-bs-parent="#accordionFlushEnroll"
+                >
+                  <div class="accordion-body">this is the list</div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
-      </nav>
-      <div class="main-content">
-        {% block content %} Ini adalah Content {% endblock %}
+
+        <div class="nav-breadcrumb">
+          <a class="navbar-brand mb-0 h1" href="#">GreatVidya</a>
+        </div>
+      </div>
+
+      <div class="nav-icon">
+        {% block add %} + {% endblock%}
+        <div class="btn-group">
+          <button
+            class="btn"
+            type="button"
+            data-bs-toggle="dropdown"
+            data-bs-auto-close="true"
+            aria-expanded="false"
+          >
+            <i class="fa-solid fa-user fa-xl"></i>
+          </button>
+          <ul class="dropdown-menu">
+            <a id="dropdown-item" href="/logout" style="text-decoration: none"
+              >Logout</a
+            >
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <div class="content-container">
+      <h5>Welcome back, {{user.username}}</h5>
+      <h6>Teaching Class</h6>
+      <div class="teaching-card-content">
+        {% block teach %} Ini adalah Content {% endblock %}
+      </div>
+      <h6>Enrolled Class</h6>
+      <div class="enrolled-card-content">
+        {% block enroll %} Ini adalah Content {% endblock %}
       </div>
     </div>
     <script

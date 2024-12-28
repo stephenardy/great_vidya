@@ -1,16 +1,43 @@
 {%extends "base_user_dashboard.html"%} {% block title %}Home{% endblock %}
-{%block content%}
+{%block add%}
 
+<div class="btn-group">
+  <button
+    class="btn"
+    type="button"
+    data-bs-toggle="dropdown"
+    data-bs-auto-close="true"
+    aria-expanded="false"
+  >
+    <i class="fa-solid fa-plus fa-xl"></i>
+  </button>
+  <ul class="dropdown-menu">
+    <a id="dropdown-item" href="/create-subject" style="text-decoration: none"
+      >Create Subject</a
+    >
+    <a id="dropdown-item" href="/join-subject" style="text-decoration: none"
+      >Join Subject</a
+    >
+  </ul>
+</div>
+
+{% endblock %} {%block teach%} {% for subject in teacher_subjects %}
 <div class="card" style="width: 18rem">
   <img src="..." class="card-img-top" alt="class-image" />
   <div class="card-body">
-    <h5 class="card-title">Card title</h5>
-    <p class="card-text">
-      Some quick example text to build on the card title and make up the bulk of
-      the card's content.
-    </p>
-    <a href="#" class="btn btn-primary">Go somewhere</a>
+    <h5 class="card-title">{{ subject.subject.name }}</h5>
+    <p class="card-text">{{ subject.subject.class_name }}</p>
+    <a href="#" class="btn btn-primary">Enter Class</a>
   </div>
 </div>
-
-{% endblock %}
+{% endfor %} {% endblock %} {%block enroll%} {% for subject in student_subjects
+%}
+<div class="card" style="width: 18rem">
+  <img src="..." class="card-img-top" alt="class-image" />
+  <div class="card-body">
+    <h5 class="card-title">{{ subject.subject.name }}</h5>
+    <p class="card-text">{{ subject.subject.class_name }}</p>
+    <a href="#" class="btn btn-primary">Enter Class</a>
+  </div>
+</div>
+{% endfor %} {% endblock %}
