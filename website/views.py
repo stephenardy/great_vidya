@@ -15,9 +15,11 @@ views = Blueprint('views',__name__)
 @views.route('/')
 @login_required
 def home():
+    user = User.query.get(current_user.id)
+    user_subjects= user.user_subjects
     teacher_subjects = UserSubjects.query.filter_by(user_id=current_user.id, is_teacher=True).all()
     student_subjects = UserSubjects.query.filter_by(user_id=current_user.id, is_teacher=False).all()
-    return render_template('user_dashboard.html', user=current_user,teacher_subjects=teacher_subjects,student_subjects=student_subjects)
+    return render_template('user_dashboard.html', user=current_user,teacher_subjects=teacher_subjects,student_subjects=student_subjects, user_subjects=user_subjects)
 
 @views.route('/create-subject', methods=['GET','POST'])
 @login_required
