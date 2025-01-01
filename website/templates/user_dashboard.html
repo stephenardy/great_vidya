@@ -21,23 +21,58 @@
   </ul>
 </div>
 
-{% endblock %} {%block teach%} {% for subject in teacher_subjects %}
-<div class="card" style="width: 18rem">
+{% endblock %}
+<!-- <div class="card" style="width: 18rem">
   <img src="..." class="card-img-top" alt="class-image" />
   <div class="card-body">
     <h5 class="card-title">{{ subject.subject.name }}</h5>
     <p class="card-text">{{ subject.subject.class_name }}</p>
     <a href="#" class="btn btn-primary">Enter Class</a>
   </div>
-</div>
-{% endfor %} {% endblock %} {%block enroll%} {% for subject in student_subjects
-%}
-<div class="card" style="width: 18rem">
-  <img src="..." class="card-img-top" alt="class-image" />
-  <div class="card-body">
-    <h5 class="card-title">{{ subject.subject.name }}</h5>
-    <p class="card-text">{{ subject.subject.class_name }}</p>
-    <a href="#" class="btn btn-primary">Enter Class</a>
+</div> -->
+
+{%block teach%}
+<div class="grid grid-cols-4 gap-4 mx-8 justify-items-center">
+  {% for subject in teacher_subjects %}
+  <div class="bg-white shadow-lg rounded-lg pb-4 max-w-xs mx-auto">
+    <a href="#" class="group">
+      <img
+        src="\static\default_subject_background.png"
+        alt="students in the class."
+        class="aspect-[3/2] w-full rounded-t-lg bg-gray-200 object-cover group-hover:opacity-75"
+      />
+      <div class="mx-4">
+        <h3 class="mt-2 text-lg font-medium text-gray-900">
+          {{ subject.subject.name }}
+        </h3>
+        <p class="mt-1 text-sm text-gray-700">
+          {{ subject.subject.class_name }}
+        </p>
+      </div>
+    </a>
   </div>
+  {% endfor %}
 </div>
-{% endfor %} {% endblock %}
+{% endblock %} {%block enroll%}
+<div class="grid grid-cols-4 gap-4 mx-8 justify-items-center">
+  {% for subject in student_subjects %}
+  <div class="bg-white shadow-lg rounded-lg pb-4 max-w-xs mx-auto">
+    <a href="#" class="group">
+      <img
+        src="\static\default_subject_background.png"
+        alt="students in the class."
+        class="aspect-[3/2] w-full rounded-t-lg bg-gray-200 object-cover group-hover:opacity-75"
+      />
+      <div class="mx-4">
+        <h3 class="mt-2 text-lg font-medium text-gray-900">
+          {{ subject.subject.name }}
+        </h3>
+        <p class="mt-1 text-sm text-gray-700">
+          {{ subject.subject.class_name }}
+        </p>
+      </div>
+    </a>
+  </div>
+  {% endfor %}
+</div>
+{% endblock %}
